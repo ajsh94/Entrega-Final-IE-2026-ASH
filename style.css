@@ -1,143 +1,384 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* --- Estilos Generales --- */
 body {
-    font-family: sans-serif;
-    margin: 70px;
-    margin-top:0;
-    padding: 2em;
-    background-color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 2em 4em;
+    background-color: #fffcf5; /* <--- Color original recuperado (crema/cálido) */
+    color: #000000;
 }
 
-
-h1, h2 {
-    font-family: 'Space Mono';
-    color: #333;
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    margin-top: 0;
 }
 
-h3{
-    font-family: 'Open Sans';
-    font-size: 1em;
+h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+    color: #652c5c;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 0.85em;
+    font-weight: 400;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 0.95em;
+    margin-top: 0;
+    margin-bottom: 0.6em; /* <--- Párrafos más juntos y ordenados */
+}
+
+/* --- Header / Hero Section con fondo de flores transparente y espacio para ilustración B/N --- */
+#header-hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3em 3em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 3em;
+    background-color: #fffcf5;
+    overflow: hidden;
+    border-radius: 0 0 20px 20px;
+}
+
+#header-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/Frieren.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+#header-hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.subtitulo-header {
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.tag-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2em;
+}
+
+.tag-list li {
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    padding: 0.6em 0;
+    border-bottom: 1px solid #000000;
+    width: 260px;
+}
+
+/* Contenedor de la ilustración principal */
+.hero-image img {
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 40px 120px 40px 80px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* --- Contenedor Principal --- */
 #container {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+}
+
+.seccion-bloque {
     display: grid;
-    /* Define 2 columnas: la primera ocupa 1 fracción, la segunda 2 fracciones */
-    grid-template-columns: 1fr 2fr;
-    gap: 5em; /* Espacio entre las columnas */
-    align-items: start; /* Alinea los items al inicio */
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4em;
+    align-items: start;
 }
 
 /* --- Columna Izquierda: Intro --- */
 .intro {
-    /* Por defecto, se ubica en la primera columna del grid */
     display: flex;
-    flex-direction: column; /* Organiza los elementos internos en una columna */
-    justify-content: center; /* Centra el contenido verticalmente */
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .intro p {
-    /* El párrafo ya usa el ancho de su contenedor por defecto */
-    font-family: 'Open Sans';
-    text-align: justify;
-    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 1.5em;
 }
 
-.intro a {
-    /* El ancla del botón se centrará gracias al 'align-self' */
-    align-self: center; /* Centra este elemento específico en el eje transversal */
+.intro strong {
+    font-weight: 700;
+}
+
+.intro em {
+    font-style: italic;
+}
+
+/* --- Centrar solo el botón "Revisa su proceso de diseño" sin subrayado --- */
+.intro > a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none; /* <--- Quita el subrayado del enlace */
+}
+
+/* --- Botones Estilo Píldora --- */
+.btn-purple {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    padding: 14px 28px;
+    border: 1.5px solid #000000;
+    background-color: #e5cee0;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    text-decoration: none; /* Asegura que el botón interno tampoco se subraie */
+}
+
+.btn-purple:hover {
+    background-color: #652c5c;
+    color: #ffffff;
+}
+
+.btn-large {
+    width: 100%;
+    max-width: 350px;
+    padding: 16px 30px;
+}
+
+.small-btn {
+    padding: 8px 20px;
+    font-size: 0.8em;
     margin-top: 1em;
 }
 
-.intro button {
-    font-family: 'Space Mono';
-    font-size: 1em;
-    padding: 15px 45px;
-    margin-top: 30px;
-    border: none;
-    background-color: #a588f4;
-    color: #000;
- 
-    cursor: pointer;
-    border-radius: 50px;
-    
-}
-
-.intro button:hover {
-    background: #000; ;
-    color: white;
-
-}
-
-
-/* Columna Derecha: Proyectos */
+/* --- Columna Derecha: Proyectos --- */
 .proyectos {
     display: flex;
     flex-direction: column;
-    /* Por defecto, se ubica en la segunda columna del grid */
 }
 
-/* --- Galería de Proyectos --- */
+/* --- Galería de Proyectos (Grid 3x2) --- */
 .galeria {
     display: grid;
-    /* Define 3 columnas de igual tamaño */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5em; /* Espacio entre las tarjetas */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
 }
 
 /* --- Tarjetas Individuales --- */
 .tarjeta {
-    background-color: rgb(255, 255, 255);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
+    background-color: transparent;
 }
 
 .tarjeta a {
-    /* El ancla ocupa todo el espacio de su columna en la galería */
-    display: block; /* Permite que el ancla ocupe todo el espacio */
-    width: 100%;
+    display: block;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.2s ease-in-out;
-}
-
-.tarjeta a:hover {
-    filter: brightness(70%); /* Aplica un filtro de brillo al 70% (más oscuro) */
-    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
 }
 
 .tarjeta img {
-    /* La imagen se ajusta al ancho del ancla */
     width: 100%;
-    display: block; /* Elimina espacios en blanco debajo de la imagen */
+    aspect-ratio: 1 / 1;
+    background-color: #000000;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 0.5em;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta a:hover img {
+    transform: scale(1.03);
 }
 
 .tarjeta h3 {
     text-align: center;
-    padding: 0.5em 0;
-    margin: 0;
+    line-height: 1.3;
 }
 
+/* --- Wiki Container (Sección Inferior Derecha) --- */
+.wiki-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 2em;
+}
+
+.nota-link p {
+    font-size: 0.75em;
+    color: #555;
+    text-align: center;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* --- Botones Desplegables Laterales (Texto Vertical Ascendente) --- */
+.toggle-btn {
+    position: fixed;
+    top: 50%;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    background-color: #fffcf5;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 24px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    font-weight: 400;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.toggle-left {
+    left: 0;
+    border-left: none;
+}
+
+.toggle-right {
+    right: 0;
+    border-right: none;
+}
+
+.toggle-btn:hover {
+    background-color: #652c5c;
+    color: #fffcf5;
+}
+
+/* --- Paneles Desplegables (Off-canvas / Drawers) --- */
+.drawer {
+    position: fixed;
+    top: 0;
+    width: 320px;
+    height: 100%;
+    background-color: #fffcf5;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    padding: 2.5em 2em;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.drawer-left {
+    left: 0;
+    transform: translateX(-100%);
+    border-right: 1px solid #000;
+}
+
+.drawer-right {
+    right: 0;
+    transform: translateX(100%);
+    border-left: 1px solid #000;
+}
+
+.drawer.open {
+    transform: translateX(0);
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.drawer-card {
+    border: 1px solid #000;
+    padding: 1.2em;
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+.drawer-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.8em;
+}
+
+.btn-drawer {
+    display: inline-block;
+    margin-top: 0.8em;
+    padding: 6px 20px;
+    background-color: #e5cee0;
+    color: #000;
+    text-decoration: none;
+    font-size: 0.8em;
+    font-weight: 700;
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+
+.spotify-widget {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px dashed #ccc;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 998;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
 
 /* --- Media Query para pantallas pequeñas --- */
 @media (max-width: 900px) {
-    
-    /* Ajusta los márgenes del body para aprovechar el espacio */
     body {
-        margin: 20px;
-        padding: 1em;
+        padding: 1.5em;
     }
 
-    /* Cambia el contenedor principal a una sola columna */
-    #container {
+    #header-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2em;
+    }
+
+    .seccion-bloque {
         grid-template-columns: 1fr;
+        gap: 2em;
     }
 
-    /* Cambia la galería de proyectos a una sola columna */
     .galeria {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
