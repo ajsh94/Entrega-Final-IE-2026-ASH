@@ -1,133 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IE 2026</title>
+    <title>Portafolio IE 2026</title>
+    <!-- Fuente Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <!-- Inicio Body -->
-
 <body>
 
-    <!-- Sección principal -->
-    <header>
-        <h1>Portafolio IE 2026</h1>
+    <!-- Botón desplegable izquierdo (Proyectos Anexos) con texto vertical ascendente -->
+    <button class="toggle-btn toggle-left" onclick="toggleDrawer('drawer-left')">
+        Otros proyectos
+    </button>
+
+    <!-- Botón desplegable derecho (Sobre Mí) con texto vertical ascendente -->
+    <button class="toggle-btn toggle-right" onclick="toggleDrawer('drawer-right')">
+        Sobre mÍ
+    </button>
+
+    <!-- Desplegable Izquierdo: Otros proyectos -->
+    <div id="drawer-left" class="drawer drawer-left">
+        <button class="btn-close" onclick="toggleDrawer('drawer-left')">&times;</button>
+        <div class="drawer-content">
+            <h2>Otros proyectos</h2>
+            <!-- Tarjeta proyecto FMD del wireframe -->
+            <div class="drawer-card">
+                <div class="drawer-img-placeholder">                
+                    <img src="assets/pfFMD.gif" alt="proyecto FMD">
+                </div>
+                <h3>Nichigetsu no Mahō Shugosha</h3>
+                <p>Un artefacto lúdico de mecanismo autómata, diseñado a partir de tecnologías de fabricación digital.</p>
+                <p>Se inspira en la estética y personajes de la serie animé Cardcaptor Sakura.</p>
+                <a href="https://wiki.ead.pucv.cl/FMD_2026_-_Tarea_5_/_Andrea_Serra" class="btn-drawer">Conoce el proyecto</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desplegable Derecho: Sobre Mí -->
+    <div id="drawer-right" class="drawer drawer-right">
+        <button class="btn-close" onclick="toggleDrawer('drawer-right')">&times;</button>
+        <div class="drawer-content">
+            <h2>Sobre Mí</h2>
+            <!-- Líneas de texto como en el wireframe -->
+            <div class="lineas-texto">
+                <p><strong>Tecnólogo(a) Médico(a) y estudiante de Diseño.</strong></p>
+                <p>Coleccionista, aficionada a la música y a la cultura geek.</p>
+                <br>
+                <p>Desde mi perfil multidisciplinar busco instaurar el diseño como una herramienta para mejorar la salud de las personas.</p>
+                <p>Este portafolio pretende ejemplificar cómo nuestras aficiones y pasatiempos tambien constituyen parte fundamental de nuestros procesos formativos y futuro perfil profesional.</p>
+                <a href="https://wiki.ead.pucv.cl/Andrea_Serra" class="btn-drawer">Conoce mi trabajo</a>
+                <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-93082020000100025" class="btn-drawer">An. Investigación científica</a>
+            </div>
+
+            <!-- Widget Spotify -->
+            <div class="spotify-widget">
+                <p><strong>Tras la escena creativa</strong></p>
+                <!-- IFRAME SPOTIFY: playlist de Spotify -->
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fondo opaco al abrir cualquier desplegable -->
+    <div id="overlay" class="overlay" onclick="closeDrawers()"></div>
+
+    <!-- Header / Sección principal Hero -->
+    <header id="header-hero">
+        <div class="hero-text">
+            <span class="subtitulo-header">PORTAFOLIO DIGITAL IE 26'</span>
+            <h1>Andrea Serra H.</h1>
+            <ul class="tag-list">
+                <li>DISEÑO</li>
+                <li>TECNOLOGÍA</li>
+                <li>MÚSICA Y CULTURA GEEK</li>
+            </ul>
+        </div>
+        <div class="hero-image">
+            <!-- RUTA DE IMAGEN PRINCIPAL RETRATO -->
+            <img src="assets/Retrato.jpg" alt="Retrato">
+        </div>
     </header>
 
     <!-- Contenedor General -->
     <div id="container">
 
-        <!-- Contenedor lado izquierdo - Parrafo y botón -->
-        <div class="intro">
-            <p>
-                Imagen escrita es una asignatura que se centra en la intersección entre diseño,
-                la programación y arte generativo. Utilizando p5.js como herramienta principal, el curso explora los
-                fundamentos de la programación creativa y su aplicación en el diseño visual interactivo.
-            </p>
-            <p>
-                A través del creative coding se hace énfasis en el pensamiento computacional como herramienta de diseño,
-                fomentando un enfoque innovador en la resolución de problemas visuales y la creación artística. La
-                integración de herramientas de IA busca ampliar las posibilidades creativas y técnicas, sirviendo como
-                complemento al proceso de diseño y programación
-            </p>
-
-
-            <a href="https://wiki.ead.pucv.cl/Sitio_Web_IE_-_Javiera_Ruiz" target="_blank">
-                <button>
-                    wiki del proyecto
-                </button>
-            </a>
-
-        </div>
-
-        <!-- Contenedor lado derecho -->
-        <div class="proyectos">
-            <h2>Mis proyectos p5js</h2>
-
-            <!-- Contenedor galería de proyectos -->
-            <div class="galeria">
-                <!-- tarjeta proyecto 1 -->
-                <div class="tarjeta">
-                    <a href="https://editor.p5js.org/jruiz-IE/full/_D3gtXvo_" target="_blank">
-                        <img src="assets/imagen1.png">
-                        </img>
-                        <h3>Tarea 1</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 2 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 2</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 3 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 3</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 4 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 4</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 5 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 5</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 6 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 6</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 7 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 7</h3>
-                    </a>
-                </div>
+        <!-- Sección Superior: Proyectos p5.js -->
+         <br>
+        <div id="seccion-proyectos" class="seccion-bloque">
+            <!-- Columna Izquierda: Intro Proyectos -->
+            <div class="intro">
+                <h2>PROYECTOS DE DISEÑO GENERATIVO</h2>
+                <p>
+                    La presente web presenta los scketches realizados de forma personal/grupal a lo largo de la asignatura de Imagen escrita 2026, mediante la herramienta digital de código abierto <strong>p5.js</strong>.
+                </p>
+                <br>
+                <a href="https://wiki.ead.pucv.cl/Sitio_Web_IE_2026_-_Andrea_Serra" target="Wiki Proyecto final U2 IE">
+                    <button class="btn-purple">Revisa su proceso de diseño.</button>
+                </a>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>
+                    Cada uno se construye desde la base de los conceptos y herramientas abordados durante el curso.
+                </p>
+                 <p>
+                    Encargo 1: Pink Floyd, The Dark Side of the Moon; figuras y/o formas básicas de dibujo.<br>
+                    Encargo 2: Cardflip; variables, condicionales y bucles.<br>
+                    Encargo 3: Ritual del vacío, Púrpura; funciones de transformación, aislación y patrones complejos.<br>
+                    Encargo 4: Fortaleza dimensional infinita (KNJ); funciones recursivas y personalizadas.<br>
+                    Encargo 5: Salto al hiperespacio (Star Wars); sistema de partículas.<br>
+                    Encargo 6: <strong>Proyecto final U1</strong> | Acople envolvente del momento compartido.
+                </p>
                 
-                <!-- tarjeta proyecto 8 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 8</h3>
-                    </a>
-                </div>
-
             </div>
 
+            <!-- Columna Derecha: Galería de Proyectos p5.js (Grid 3x2) -->
+            <div class="proyectos">
+                <div class="galeria">
+
+                    <!-- tarjeta proyecto 1 -->
+                    <div class="tarjeta">
+                        <a href="https://editor.p5js.org/ajsh/full/JXw348rN5" target="_blank">
+                            <img src="assets/Encargo1.png" alt="Pink Floyd, The Dark Side of the Moon">
+                            <h3>Pink Floyd, The Dark Side of the Moon.</h3>
+                        </a>
+                    </div>
+
+                    <!-- tarjeta proyecto 2 -->
+                    <div class="tarjeta">
+                        <a href="https://editor.p5js.org/ajsh/full/GtdFl85QO" target="_blank">
+                            <img src="assets/Encargo2.png" alt="Cardflip">
+                            <h3>Cardflip.</h3>
+                        </a>
+                    </div>
+
+                    <!-- tarjeta proyecto 3 -->
+                    <div class="tarjeta">
+                        <a href="https://editor.p5js.org/ajsh/full/gyh34Zn9y" target="_blank">
+                            <img src="assets/Encargo3.png" alt="Ritual del vacío">
+                            <h3>Ritual del vacío, Púpura (JJK).</h3>
+                        </a>
+                    </div>
+
+                    <!-- tarjeta proyecto 4 -->
+                    <div class="tarjeta">
+                        <a href="https://editor.p5js.org/ajsh/full/fWZwADakx" target="_blank">
+                            <img src="assets/Encargo4.png" alt="Fortaleza dimensional">
+                            <h3>Fortaleza dimensional infinita (KNJ).</h3>
+                        </a>
+                    </div>
+
+                    <!-- tarjeta proyecto 5 -->
+                    <div class="tarjeta">
+                        <a href="https://editor.p5js.org/ajsh/full/yHDiKAyOR" target="_blank">
+                            <img src="assets/Encargo5.png" alt="Salto al hiperespacio">
+                            <h3>Salto al hiperespacio (Star Wars).</h3>
+                        </a>
+                    </div>
+
+                    <!-- tarjeta proyecto 6 -->
+                    <div class="tarjeta">
+                        <a href="https://editor.p5js.org/ajsh/full/ZWjA-RXWU" target="_blank">
+                            <img src="assets/Encargo6.png" alt="Acople envolvente">
+                            <h3>Acople envolvente del momento compartido</h3>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Inferior: Acerca de la Asignatura -->
+        <div id="seccion-asignatura" class="seccion-bloque">
+            <!-- Columna Izquierda: Intro Asignatura -->
+            <div class="intro">
+                <h2>ACERCA DE LA ASIGNATURA</h2>
+                <p>
+                    <strong>Imagen escrita</strong> es un curso lectivo que aborda el código como material de diseño y una forma de escritura visual, que inicia en la conceptualización y formulación para traducir las ideas en un lenguaje algorítmico que podamos percibir desde la <em>experiencia visual e interactiva</em>.
+                </p>
+                <p>
+                    Introduce al arte generativo, el creative coding y el desarrollo web a través de ejercicios progresivos en <strong>JavaScript (p5.js), HTML y CSS</strong>.
+                </p>
+            </div>
+
+            <!-- Columna Derecha: Botón Wiki e Información de Enlaces -->
+            <div class="proyectos wiki-container">
+                <a href="https://wiki.ead.pucv.cl/Imagen_Escrita_2026" target="_blank">
+                    <button class="btn-purple btn-large">Explora la asignatura.</button>
+                </a>
+                <div class="nota-link">
+                    <p><strong>¿Dónde me derivan los links?</strong><br>
+                    Cada enlace te redirecciona a los scketch originales de p5js o páginas dentro del sistema Wiki Casiopea; un repositorio virtual oficial de Escuela de Arquitectura y Diseño de la PUCV.</p>
+                </div>
+            </div>
         </div>
 
     </div>
 
+    <!-- Script simple para abrir/cerrar desplegables -->
+    <script>
+        function toggleDrawer(id) {
+            const drawer = document.getElementById(id);
+            const overlay = document.getElementById('overlay');
+            drawer.classList.toggle('open');
+            
+            const anyOpen = document.querySelector('.drawer.open');
+            if (anyOpen) {
+                overlay.classList.add('active');
+            } else {
+                overlay.classList.remove('active');
+            }
+        }
+
+        function closeDrawers() {
+            document.querySelectorAll('.drawer').forEach(d => d.classList.remove('open'));
+            document.getElementById('overlay').classList.remove('active');
+        }
+    </script>
 </body>
 
 </html>
